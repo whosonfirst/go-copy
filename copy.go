@@ -3,6 +3,7 @@ package copy
 import (
 	"bytes"
 	"context"
+	"errors"
 	"github.com/whosonfirst/go-reader"
 	"github.com/whosonfirst/go-writer"
 	"io"
@@ -10,13 +11,27 @@ import (
 )
 
 type Copier struct {
-	Reader  reader.Reader
-	Writers []writer.Writer
+	reader  reader.Reader
+	writers []writer.Writer
+}
+
+func NewCopier(reader reader.Reader, writers ...writer.Writer) (*Copier, error) {
+
+	if len(writers) == 0 {
+		return nil, errors.New("No writers")
+	}
+
+	cp := &Copier{
+		reader:  reader,
+		writers: writers,
+	}
+
+	return cp, nil
 }
 
 func (cp *Copier) Copy(ctx context.Context, uri string) error {
 
-	fh, err := cp.Reader.Read(ctx, uri)
+	fh, err := cp.reader.Read(ctx, uri)
 
 	if err != nil {
 		return err
@@ -36,7 +51,7 @@ func (cp *Copier) Copy(ctx context.Context, uri string) error {
 	done_ch := make(chan bool)
 	error_ch := make(chan error)
 
-	for _, wr := range cp.Writers {
+	for _, wr := range cp.writers {
 
 		br := bytes.NewReader(body)
 		fh := ioutil.NopCloser(br)
@@ -64,7 +79,7 @@ func (cp *Copier) Copy(ctx context.Context, uri string) error {
 
 	}
 
-	remaining := len(cp.Writers)
+	remaining := len(cp.writers)
 
 	for remaining > 0 {
 
