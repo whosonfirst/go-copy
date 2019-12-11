@@ -1,0 +1,9 @@
+github.com/natefinch/atomic v0.0.0-20150920032501-a62ce929ffcc h1:7xGrl4tTpBQu5Zjll08WupHyq+Sp0Z/adtyf1cfk3Q8=
+github.com/natefinch/atomic v0.0.0-20150920032501-a62ce929ffcc/go.mod h1:1rLVY/DWf3U6vSZgH16S7pymfrhK2lcUlXjgGglw/lY=
+github.com/whosonfirst/go-reader v0.0.2 h1:Bn+dJSOuXJzV9913khoJFO2iFTlsNypMvoks9Do8O/k=
+github.com/whosonfirst/go-reader v0.0.2/go.mod h1:k/U2jXarXsFWC2yh63kYgKIJzTEmc60lN/ipyrdT3W4=
+github.com/whosonfirst/go-whosonfirst-reader v0.0.0-20191122203133-047f20452865/go.mod h1:xYzBn6llLD/uS6Zhh0H4LAqddEJHXdQSUIxywTnhpOU=
+github.com/whosonfirst/go-whosonfirst-sources v0.1.0/go.mod h1:EUMHyGzUmqPPxlMmOp+28BFeoBdxxE0HCKRd67lkqGM=
+github.com/whosonfirst/go-whosonfirst-uri v0.1.0/go.mod h1:8eaDVcc4v+HHHEDaRbApdmhPwM4/JQllw2PktvZcPVs=
+github.com/whosonfirst/go-writer v0.0.2 h1:ZWPMCUyQS8Khvyhz34iAsEhvRFFWo5JvraQOU/0kf5U=
+github.com/whosonfirst/go-writer v0.0.2/go.mod h1:icuZIaxlsSAb8TnAzZFYt2G4ObYeI3vBmcNRimB92sY=
